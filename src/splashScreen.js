@@ -10,7 +10,7 @@ export default class SplashScreen extends React.Component {
 			  actions: [NavigationActions.navigate({ routeName: 'Home' })],
 			});
 			this.props.navigation.dispatch(resetAction);
-		}, 2000);
+		}, 2);
 	}
 
 	render() {
