@@ -9,6 +9,7 @@ import CheckResultScreen from './src/component/checkResult/CheckResultScreen';
 import MedicineScreen from './src/component/medicine/MedicineScreen';
 import SettingScreen from './src/component/setting/SettingScreen';
 import ChangeDomainScreen from './src/component/changeDomain/ChangeDomainScreen';
+import ReceptionistScreen from './src/component/receptionist/ReceptionistScreen';
 
 import TestCamera from './src/component/testCamera';
 type Props = {};
@@ -35,6 +36,7 @@ const RootStack = createStackNavigator({
     Setting: SettingScreen,
     Camera: TestCamera,
     Domain: ChangeDomainScreen,
+    Receptionist: ReceptionistScreen,
   }, StackOptions
 );
 

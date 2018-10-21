@@ -54,7 +54,8 @@ export default class HomeScreen extends React.Component {
             source={require('../../images/main-menu/registration.png')}
             text="Receptionist"
             styleBtn={styles.btnImg}
-            styleImg={styles.image} />
+            styleImg={styles.image}
+            onPress={() => this.props.navigation.navigate('Receptionist')} />
           <ImageButton
             source={require('../../images/main-menu/result.png')}
             text="Check Result"
