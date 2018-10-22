@@ -37,6 +37,12 @@ class Api {
 			url,
 		});
 	}
+
+	async getMedicines(url) {
+		return this._fetch({
+			url,
+		});
+	}
 }
 
 const api = new Api();
