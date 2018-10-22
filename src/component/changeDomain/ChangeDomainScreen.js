@@ -16,7 +16,8 @@ export default class ChangeDomainScreen extends React.Component{
   }
 
   _onPress() {
-    console.log("asdasd");
+    global.domain = this.state.domain;
+    this.props.navigation.navigate('Home');
   }
 
 	render() {

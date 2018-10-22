@@ -14,7 +14,7 @@ import ReceptionistScreen from './src/component/receptionist/ReceptionistScreen'
 import TestCamera from './src/component/testCamera';
 type Props = {};
 /* GLOBAL VARIABLE */
-global.domain = "global";
+global.domain = "192.168.10.29:5000";
 global.selectedLanguage = "";
 class App extends Component<Props> {
   render() {

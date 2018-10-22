@@ -17,9 +17,6 @@ export default class HomeScreen extends React.Component {
   }
   
 	componentDidMount() {
-    // test api
-    api.FBMovies("https://facebook.github.io/react-native/movies.json")
-    .then((res) => {console.log(res, 'api res')});
 	}
 
   render() {

@@ -2,14 +2,19 @@ import { AsyncStorage } from "react-native";
 
 class Api {
 	async _fetch(options) {
+		const domain = global.domain;
+
 		options = {
 			method: 'GET',
 			url : null,
 			body: null,
+			headers: {
+				lang: global.selectedLanguage,
+			},
 			...options
 		};
 
-		const url = options.url;
+		const url = "http://" + domain + "/" + options.url;
 
 	  try {
 	    const response = await fetch(url, options);
@@ -22,6 +27,12 @@ class Api {
 
 
 	async FBMovies(url) {
+		return this._fetch({
+			url,
+		});
+	}
+
+	async getResult(url) {
 		return this._fetch({
 			url,
 		});
