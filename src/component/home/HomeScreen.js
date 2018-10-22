@@ -2,30 +2,28 @@ import React, {Component, PropTypes} from 'react';
 import { Platform, StyleSheet, Text, Image, Button, View } from 'react-native';
 import api from '../../lib/api';
 import ImageButton from '../../shared/ImageButton';
+import { localizationStrings } from './localization';
 
 export default class HomeScreen extends React.Component {
-  componentWillMount() {
-    // if (global.selectedLanguage == "") {
-    //   return this.props.navigation.navigate('Language');
-    // }
-    console.log("asd");
+  constructor() {
+    super();
+    this.state = {
+      strings: {},
+    }
   }
-	componentDidMount() {
-    console.log("dsa");
-    // if (global.selectedLanguage == "") {
-    //   return this.props.navigation.navigate('Language');
-    // }
-    console.log(global.selectedLanguage);
 
+  componentWillMount() {
+    this.setState({ strings: localizationStrings() });
+  }
+  
+	componentDidMount() {
+    // test api
     api.FBMovies("https://facebook.github.io/react-native/movies.json")
     .then((res) => {console.log(res, 'api res')});
 	}
 
-  componentWillReceiveProps(props) {
-    console.log("asdasd", props, this.props);
-  }
-
   render() {
+    console.log(this.state.strings, "strings");
     return (
       <View style={styles.container}>
         <View style={styles.imgContainer}>

@@ -13,7 +13,6 @@ export default class SelectLanguageScreen extends React.Component {
   }
 
   componentDidMount() {
-    console.log(global.domain);
   }
 
   _onPress(lang) {

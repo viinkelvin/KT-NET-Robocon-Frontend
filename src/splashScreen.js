@@ -7,7 +7,7 @@ export default class SplashScreen extends React.Component {
 		setTimeout(() => {
 			const resetAction = StackActions.reset({
 			  index: 0,
-			  actions: [NavigationActions.navigate({ routeName: 'Home' })],
+			  actions: [NavigationActions.navigate({ routeName: 'Language' })],
 			});
 			this.props.navigation.dispatch(resetAction);
 		}, 2);

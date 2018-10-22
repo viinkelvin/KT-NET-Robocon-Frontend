@@ -1,14 +1,12 @@
-// export class BaseLocalization {
-// 	// constructor(language) {
-// 	// 	console.log(language, "langauge");
-// 	// 	return langauge;
-//  //  }	
-// }
+export default class BaseLocalization {
+	constructor(language) {
+		const lang = global.selectedLanguage;
+    this.state = {
+      lang: language[lang],
+    }
+  }	
 
-var localz = {};
-
-localz.strings = function BaseLocalization() {
-	this.parentStrings = null;
+  getLocalization() {
+  	return this.state.lang;
+  }
 }
-
-exports.BaseLocalization = localz.strings;
