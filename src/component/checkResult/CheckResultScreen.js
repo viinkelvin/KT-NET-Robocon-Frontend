@@ -1,9 +1,23 @@
 import React, {Component} from 'react';
 import { StyleSheet, Text, Image, View, Alert, TextInput } from 'react-native';
 // import { strings } from './localization';
+import api from '../../lib/api';
 import ImageButton from '../../shared/ImageButton';
 
 export default class CheckResultScreen extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      data: {},
+    }
+  }
+
+  componentDidMount() {
+    // test api
+    api.getResult("medicine")
+    .then((res) => {console.log(res, 'api res')})
+    .catch(err => console.log(err, "error"));
+  }
 
 	render() {
 		return(
