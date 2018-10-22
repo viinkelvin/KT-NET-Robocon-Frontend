@@ -2,25 +2,31 @@ import React, {Component} from 'react';
 import { StyleSheet, Text, Image, View, Alert, TextInput, FlatList, TouchableOpacity } from 'react-native';
 // import { strings } from './localization';
 import ImageButton from '../../shared/ImageButton';
+import { localizationStrings } from './localization';
 
 export default class SettingScreen extends React.Component{
 
   constructor() {
     super();
     this.state = {
+      strings: {},
       data: [
         {
           id: 1,
-          text: "Change Language",
+          text: {this.state.strings.language},
           pressAction: () => this.props.navigation.navigate('Language'),
         },
         {
           id: 2,
-          text: "Change Domain Ip",
+          text: {this.state.strings.domain},
           pressAction: () => this.props.navigation.navigate('Domain'),
         }
       ],
     };
+  }
+
+  componentWillMount() {
+    this.setState({ strings: localizationStrings() });
   }
 
   _keyExtractor = (item, index) => item.id.toString();

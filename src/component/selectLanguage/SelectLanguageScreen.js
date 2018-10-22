@@ -1,15 +1,20 @@
-
 import React, {Component} from 'react';
 import { StyleSheet, Text, Image, View, Alert } from 'react-native';
 // import { strings } from './localization';
 import ImageButton from '../../shared/ImageButton';
+import { localizationStrings } from './localization';
 
 export default class SelectLanguageScreen extends React.Component {
   constructor() {
     super();
     this.state = {
       data : [],
+      strings: {},
     }
+  }
+
+  componentWillMount() {
+    this.setState({ strings: localizationStrings() });
   }
 
   componentDidMount() {
@@ -17,7 +22,7 @@ export default class SelectLanguageScreen extends React.Component {
 
   _onPress(lang) {
     Alert.alert(
-      'Confirmation',
+     'Confirmation',
       "Are your sure pick this language?",
       [
         { text: 'OK', onPress: () => this._onPressOK(lang) },
@@ -34,26 +39,26 @@ export default class SelectLanguageScreen extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.title}>CHOOSE YOUR LANGUAGE</Text>
+        <Text style={styles.title}>asd</Text>
         <View style={styles.imgBtnContainer}>
           <ImageButton
             source={require('../../images/flag/jp.png')}
-            text="Japan"
+            text="japan"
             onPress={() => this._onPress('ja')}
             styleImg={styles.image} />
           <ImageButton
             source={require('../../images/flag/gb.png')}
-            text="English"
+            text="english"
             onPress={() => this._onPress('en')}
             styleImg={styles.image} />
           <ImageButton
             source={require('../../images/flag/id.png')}
-            text="Indonesia"
+            text="indonesia"
             onPress={() => this._onPress('id')}
             styleImg={styles.image} />
           <ImageButton
             source={require('../../images/flag/ph.png')}
-            text="Philippine"
+            text="filipino"
             onPress={() => this._onPress('tl')}
             styleImg={styles.image} />
         </View>

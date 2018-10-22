@@ -20,46 +20,45 @@ export default class HomeScreen extends React.Component {
 	}
 
   render() {
-    console.log(this.state.strings, "strings");
     return (
       <View style={styles.container}>
         <View style={styles.imgContainer}>
           <ImageButton
             source={require('../../images/main-menu/check-blood-pressure.png')}
-            text="Blood Pressure"
+            text={this.state.strings.imgCheckBlood}
             styleBtn={styles.btnImg}
             styleImg={styles.image} />
           <ImageButton
             source={require('../../images/main-menu/room-guide.png')}
-            text="Guide"
+            text={this.state.strings.imgGuild}
             styleBtn={styles.btnImg}
             styleImg={styles.image} />
           <ImageButton
             source={require('../../images/main-menu/graph.png')}
-            text="Statistics"
+            text={this.state.strings.imgGraph}
             styleBtn={styles.btnImg}
             styleImg={styles.image} />
           <ImageButton
             source={require('../../images/main-menu/drugs.png')}
-            text="Medicine"
+            text={this.state.strings.imgMedicine}
             styleBtn={styles.btnImg}
             styleImg={styles.image}
             onPress={() => this.props.navigation.navigate('Medicine')} />
           <ImageButton
             source={require('../../images/main-menu/registration.png')}
-            text="Receptionist"
+            text={this.state.strings.imgReceptionist}
             styleBtn={styles.btnImg}
             styleImg={styles.image}
             onPress={() => this.props.navigation.navigate('Receptionist')} />
           <ImageButton
             source={require('../../images/main-menu/result.png')}
-            text="Check Result"
+            text={this.state.strings.imgResult}
             styleBtn={styles.btnImg}
             styleImg={styles.image}
             onPress={() => this.props.navigation.navigate('Result')} />
           <ImageButton
             source={require('../../images/main-menu/setting.png')}
-            text="Setting"
+            text={this.state.strings.imgSetting}
             styleBtn={styles.btnImg}
             styleImg={styles.image}
             onPress={() => this.props.navigation.navigate('Setting')} />

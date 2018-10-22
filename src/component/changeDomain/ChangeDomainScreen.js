@@ -2,17 +2,20 @@ import React, {Component} from 'react';
 import { StyleSheet, Text, Image, View, Alert, TextInput, TouchableOpacity  } from 'react-native';
 // import { strings } from './localization';
 import ImageButton from '../../shared/ImageButton';
+import { localizationStrings } from './localization';
 
 export default class ChangeDomainScreen extends React.Component{
   constructor() {
     super();
     this.state = {
-      domain: ""
+      domain: "",
+      strings: {},
     };
   }
 
   componentDidMount() {
     this.setState({ domain: global.domain })
+    this.setState({ strings: localizationStrings() });
   }
 
   _onPress() {
@@ -23,7 +26,7 @@ export default class ChangeDomainScreen extends React.Component{
 	render() {
 		return(
 			<View style={styles.container}>
-        <Text style={styles.title}>Change Domain</Text>
+        <Text style={styles.title}>{this.state.strings.title}</Text>
         <TextInput
           style={styles.textInput}
           onChangeText={(text) => this.setState({domain: text})}
@@ -32,7 +35,7 @@ export default class ChangeDomainScreen extends React.Component{
         <TouchableOpacity
           style={styles.button}
           onPress={() => this._onPress()}>
-            <Text style={{ color: "white" }}>Submit</Text>
+            <Text style={{ color: "white" }}>{this.state.strings.submit}</Text>
         </TouchableOpacity>
       </View>
 		);

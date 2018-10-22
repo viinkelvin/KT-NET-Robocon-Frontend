@@ -15,7 +15,7 @@ import TestCamera from './src/component/testCamera';
 type Props = {};
 /* GLOBAL VARIABLE */
 global.domain = "192.168.10.29:5000";
-global.selectedLanguage = "";
+global.selectedLanguage = "ja";
 class App extends Component<Props> {
   render() {
     return <RootStack />

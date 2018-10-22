@@ -19,6 +19,24 @@ export const localizationStrings = () => {
 			imgReceptionist: "受付",
 			imgResult: "健康診断結果",
 			imgSetting: "設定",
+		},
+		"id" : {
+			imgCheckBlood: "Tekanan darah",
+			imgGuild: "Pemandu",
+			imgGraph: "Statistik",
+			imgMedicine: "Obat",
+			imgReceptionist: "Resepsionis",
+			imgResult: "Hasil Periksa",
+			imgSetting: "Pengaturan",
+		},
+		"tl" : {
+			imgCheckBlood: "Presyon ng dugo",
+			imgGuild: "Gabay",
+			imgGraph: "Istatistika",
+			imgMedicine: "Gamot",
+			imgReceptionist: "Receptionist",
+			imgResult: "Resulta ng Suriin",
+			imgSetting: "Pagtatakda",
 		}
 	}).getLocalization();
 }

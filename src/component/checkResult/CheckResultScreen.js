@@ -2,13 +2,24 @@ import React, {Component} from 'react';
 import { StyleSheet, Text, Image, View, Alert, TextInput } from 'react-native';
 // import { strings } from './localization';
 import ImageButton from '../../shared/ImageButton';
+import { localizationStrings } from './localization';
 
 export default class CheckResultScreen extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      strings: {},
+    }
+  }
+
+  componentWillMount() {
+    this.setState({ strings: localizationStrings() });
+  }
 
 	render() {
 		return(
 			<View style={styles.container}>
-				<Text style={styles.title}>Result of Medical Examination</Text>
+				<Text style={styles.title}>{this.state.strings.title}</Text>
 				<View style={styles.resultContainer}>
 					<View style={styles.textarea}>
 						<TextInput

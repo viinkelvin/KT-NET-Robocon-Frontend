@@ -3,16 +3,20 @@ import BaseLocalization from '../../lib/baseLocalization';
 export const localizationStrings = () => {
 	return new BaseLocalization({
 		"en" : {
-			title: "Result of Medical Examination",
+			title: "Change Domain",
+			submit: "Submit",
 		},
 		"ja" : {
-			title: "健康診断の結果",
+			title: "ドメインの変更",
+			submit: "登録",
 		},
 		"id" : {
-			title: "Hasil Pemeriksaan Medis",
+			title: "Ubah Domain",
+			submit: "Submit",
 		},
 		"tl" : {
-			title: "Resulta ng Medical Examination",
+			title: "Baguhin ang Domain",
+			submit: "Ipasa",
 		}
 	}).getLocalization();
 }
