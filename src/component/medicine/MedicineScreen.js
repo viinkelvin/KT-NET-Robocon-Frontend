@@ -7,45 +7,16 @@ export default class MedicineScreen extends React.Component {
   constructor() {
     super();
     this.state = {
-      data: [
-        {
-          id: 1,
-          text: "Blood Pressure",
-          source: "https://image.ibb.co/h8O1d0/check-blood-pressure.png",
-          navigate: '',
-        },
-        {
-          id: 2,
-          text: "Guide",
-          source: 'https://image.ibb.co/gQMbBL/room-guide.png',
-          navigate: '',
-        },
-        {
-          id: 3,
-          text: "Statistics",
-          source: "https://image.ibb.co/js1bBL/graph.png",
-          navigate: '',
-        },
-        {
-          id: 4,
-          text: "Medicine",
-          source: "https://image.ibb.co/cNCirL/drugs.png",
-          navigate: '',
-        },
-        {
-          id: 5,
-          text: "Receptionist",
-          source: "https://image.ibb.co/f5AxJ0/registration.png",
-          navigate: '',
-        },
-        {
-          id: 6,
-          text: "Check Result",
-          source: "https://image.ibb.co/ePt6BL/result.png",
-          navigate: '',
-        }
-      ],
+      data: [],
     };
+  }
+
+  componentDidMount() {
+    api.getMedicines("medicine")
+    .then((res) => {
+      this.setState({ data: res });
+    })
+    .catch(err => console.log(err, "error"));
   }
 
   renderImgBtn = () => {
@@ -54,8 +25,8 @@ export default class MedicineScreen extends React.Component {
       result.push(
         <ImageButton
           key={idx}
-          source={{uri: item.source}}
-          text={item.text}
+          source={require("../../images/img-placeholder.png")}
+          text={item.medicine_name}
           styleBtn={styles.btnImg}
           styleImg={styles.image} />
       );
@@ -95,6 +66,7 @@ const styles = StyleSheet.create({
   },
   imgContainer: {
     flexDirection: 'row',
+    flexWrap: 'wrap',
   },
   txtSearch: {
     flex: 1,
@@ -105,7 +77,16 @@ const styles = StyleSheet.create({
     marginRight: 10,
   },
   btnImg: {
-    paddingRight: 20,
+    alignItems: 'center',
+    borderColor: 'black',
+    borderWidth: 1,
+    padding: 0,
+    paddingLeft: 4,
+    paddingRight: 4,
+    paddingBottom: 4,
+    margin: 10,
+    width: 200,
+    height: 175,
   },
   image: {
     width: 100,

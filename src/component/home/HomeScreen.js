@@ -64,7 +64,7 @@ export default class HomeScreen extends React.Component {
             styleImg={styles.image}
             onPress={() => this.props.navigation.navigate('Setting')} />
           <ImageButton
-            source={{uri: "http://cdn.onlinewebfonts.com/svg/img_469256.png"}}
+            source={{uri: "https://cdn.onlinewebfonts.com/svg/img_469256.png"}}
             text="test Camera"
             styleBtn={styles.btnImg}
             styleImg={styles.image}
