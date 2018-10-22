@@ -39,7 +39,7 @@ export default class SelectLanguageScreen extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.title}>asd</Text>
+        <Text style={styles.title}>Please select your language</Text>
         <View style={styles.imgBtnContainer}>
           <ImageButton
             source={require('../../images/flag/jp.png')}

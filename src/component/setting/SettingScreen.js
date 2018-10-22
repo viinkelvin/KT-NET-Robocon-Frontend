@@ -13,12 +13,12 @@ export default class SettingScreen extends React.Component{
       data: [
         {
           id: 1,
-          text: {this.state.strings.language},
+          text: "Change Language",
           pressAction: () => this.props.navigation.navigate('Language'),
         },
         {
           id: 2,
-          text: {this.state.strings.domain},
+          text: "Change Domain IP",
           pressAction: () => this.props.navigation.navigate('Domain'),
         }
       ],
