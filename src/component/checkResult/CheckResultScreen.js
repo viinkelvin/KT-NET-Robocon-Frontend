@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import { StyleSheet, Text, Image, View, Alert, TextInput } from 'react-native';
 // import { strings } from './localization';
+import api from '../../lib/api';
 import ImageButton from '../../shared/ImageButton';
 import { localizationStrings } from './localization';
 
@@ -14,6 +15,9 @@ export default class CheckResultScreen extends React.Component {
 
   componentWillMount() {
     this.setState({ strings: localizationStrings() });
+    api.getResult("medicine")
+    .then((res) => {console.log(res, 'api res')})
+    .catch(err => console.log(err, "error"));
   }
 
 	render() {
