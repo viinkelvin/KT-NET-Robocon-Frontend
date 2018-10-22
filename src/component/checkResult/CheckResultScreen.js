@@ -63,21 +63,21 @@ export default class CheckResultScreen extends React.Component {
         <View style={{ flex: 1 }}>
           <View style={styles.col3row}><Text>: {data.height ? data.height.value : '' } cm</Text></View>
           <View style={styles.col3row}><Text>: {data.body_weight ? data.body_weight.value : '' } Kg</Text></View>
-          <View style={styles.col3row}><Text>: {data.abdominal_circumference ? data.abdominal_circumference.value : '' }</Text></View>
-          <View style={styles.col3row}><Text>: {data.actual_measurement ? data.actual_measurement : ''} {data.self_measurement ? data.self_measurement : ''} {data.self_assessment ? data.self_assessment : ''}</Text></View>
+          <View style={styles.col3row}><Text>: {data.abdominal_circumference_value ? data.abdominal_circumference_value : "" } cm</Text></View>
+          <View style={styles.col3row}><Text>: {data.abdominal_circumference ? this.getTextPhsycal(data) : '' }</Text></View>
           <View style={styles.col3row}><Text>: {data.bmi ? data.bmi :''}</Text></View>
         </View>
       </View>
     );
   }
 
-  getTextPhsycal(val) {
-    if (val == 1) {
-      return "asd"
-    } else if (val == 2) {
-      return "das"
+  getTextPhsycal(data) {
+    if (data.abdominal_circumference.value == 1) {
+      return data.actual_measurement;
+    } else if (data.abdominal_circumference.value == 2) {
+      return data.self_measurement;
     } else {
-      return "qwe"
+      return data.self_assessment
     }
   }
 
@@ -93,7 +93,7 @@ export default class CheckResultScreen extends React.Component {
         <View style={{ flex: 1 }}>
           <View style={styles.col3row}><Text>: {data.systole ? data.systole.value : '' } mmHg</Text></View>
           <View style={styles.col3row}><Text>: {data.diastolic_phase ? data.diastolic_phase.value : '' } mmHg</Text></View>
-          <View style={styles.col3row}><Text>: {data.number_of_measurements ? data.number_of_measurements.value : '' }</Text></View>
+          <View style={styles.col3row}><Text>: {data.number_of_measurements ? data.number_of_measurements.value : '' } X</Text></View>
         </View>
       </View>
     );
@@ -208,11 +208,11 @@ export default class CheckResultScreen extends React.Component {
           </View>
 					<View>
 						<ImageButton
-	            source={require('../../images/main-menu/check-blood-pressure.png')}
+	            source={require('../../images/check-result/Translate.png')}
 	            styleBtn={[styles.btnImg, {marginTop: 0}]}
 	            styleImg={styles.image} />
             <ImageButton
-	            source={require('../../images/main-menu/check-blood-pressure.png')}
+	            source={require('../../images/check-result/speak.png')}
 	            styleBtn={styles.btnImg}
 	            styleImg={styles.image} />
 					</View>
