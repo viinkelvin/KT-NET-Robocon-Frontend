@@ -13,20 +13,20 @@ export default class SelectLanguageScreen extends React.Component {
     }
   }
 
-  componentWillMount() {
-    this.setState({ strings: localizationStrings() });
-  }
-
   componentDidMount() {
+    const strings = localizationStrings();
+
+    this.setState({ strings });
   }
 
   _onPress(lang) {
+    const { strings } = this.state;
     Alert.alert(
-     'Confirmation',
-      "Are your sure pick this language?",
+     strings.confirmation,
+     strings.confirmation_text,
       [
-        { text: 'OK', onPress: () => this._onPressOK(lang) },
-        { text: 'Cancel', onPress: () => console.log("cancel") }
+        { text: strings.ok, onPress: () => this._onPressOK(lang) },
+        { text: strings.cancel, onPress: () => console.log("cancel") }
       ]
     );
   }
@@ -37,28 +37,29 @@ export default class SelectLanguageScreen extends React.Component {
   }
 
   render() {
+    const { strings } = this.state;
     return (
       <View style={styles.container}>
-        <Text style={styles.title}>Please select your language</Text>
+        <Text style={styles.title}>{strings.title}</Text>
         <View style={styles.imgBtnContainer}>
           <ImageButton
             source={require('../../images/flag/jp.png')}
-            text="japan"
+            text={strings.ja}
             onPress={() => this._onPress('ja')}
             styleImg={styles.image} />
           <ImageButton
             source={require('../../images/flag/gb.png')}
-            text="english"
+            text={strings.en}
             onPress={() => this._onPress('en')}
             styleImg={styles.image} />
           <ImageButton
             source={require('../../images/flag/id.png')}
-            text="indonesia"
+            text={strings.id}
             onPress={() => this._onPress('id')}
             styleImg={styles.image} />
           <ImageButton
             source={require('../../images/flag/ph.png')}
-            text="filipino"
+            text={strings.tl}
             onPress={() => this._onPress('tl')}
             styleImg={styles.image} />
         </View>

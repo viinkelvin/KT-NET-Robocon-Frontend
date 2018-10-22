@@ -2,16 +2,20 @@ import React, {Component, PropTypes} from 'react';
 import { Platform, StyleSheet, Text, Image, Button, View, TextInput } from 'react-native';
 import api from '../../lib/api';
 import ImageButton from '../../shared/ImageButton';
+import Header from '../../shared/Header';
+import { localizationStrings } from './localization';
 
 export default class MedicineScreen extends React.Component {
   constructor() {
     super();
     this.state = {
       data: [],
+      strings: {},
     };
   }
 
   componentDidMount() {
+    this.setState({ strings: localizationStrings() });
     api.getMedicines("medicine")
     .then((res) => {
       this.setState({ data: res });
@@ -35,8 +39,12 @@ export default class MedicineScreen extends React.Component {
   }
 
   render() {
+    const { strings } = this.state;
     return (
       <View style={styles.container}>
+        <Header
+          title={strings.title}
+          back={() => this.props.navigation.goBack()} />
         <View style={styles.searchContainer}>
           <TextInput
             placeholder="Search..."

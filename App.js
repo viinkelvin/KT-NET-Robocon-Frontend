@@ -31,6 +31,7 @@ const RootStack = createStackNavigator({
     SplashScreen: SplashScreen,
     Home: HomeScreen,
     Language: SelectLanguageScreen,
+    SettingLanguage: SelectLanguageScreen,
     Result: CheckResultScreen,
     Medicine: MedicineScreen,
     Setting: SettingScreen,

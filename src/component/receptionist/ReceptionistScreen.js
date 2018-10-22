@@ -2,7 +2,8 @@
 import React, {Component} from 'react';
 import { StyleSheet, Text, Image, View, Alert } from 'react-native';
 // import { strings } from './localization';
-import { Container, Header, Content, Form, Item, Input } from 'native-base';
+import { Container, Content, Form, Item, Input } from 'native-base';
+import Header from '../../shared/Header';
 
 export default class ReceptionistScreen extends React.Component {
   constructor() {
@@ -19,18 +20,16 @@ export default class ReceptionistScreen extends React.Component {
 
   render() {
     return (
-      <Container>
-        <Content>
-          <Form>
+      <View style={styles.container}>
+        <Header
+          title="asdas"
+          back={() => this.props.navigation.goBack()} />
+          <View>
             <Item>
-              <Input placeholder="Username" />
+              <Input placeholder="Underline Textbox" />
             </Item>
-            <Item last>
-              <Input placeholder="Password" />
-            </Item>
-          </Form>
-        </Content>
-      </Container>
+          </View>
+      </View>
     );
   }
 }
@@ -39,8 +38,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: 'white',
-    justifyContent: 'center',
-    alignItems: 'center',
+    padding: 20,
   },
   title: {
     fontSize: 24,

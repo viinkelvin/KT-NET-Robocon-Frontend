@@ -3,6 +3,7 @@ import BaseLocalization from '../../lib/baseLocalization';
 export const localizationStrings = () => {
 	return new BaseLocalization({
 		"en" : {
+			title: 'Main Menu',
 			imgCheckBlood: "Blood Pressure",
 			imgGuild: "Guide",
 			imgGraph: "Statistics",
@@ -12,6 +13,7 @@ export const localizationStrings = () => {
 			imgSetting: "Setting",
 		},
 		"ja" : {
+			title: 'メインメニュー',
 			imgCheckBlood: "血圧",
 			imgGuild: "ガイド",
 			imgGraph: "健康統計",
@@ -21,6 +23,7 @@ export const localizationStrings = () => {
 			imgSetting: "設定",
 		},
 		"id" : {
+			title: 'Menu Utama',
 			imgCheckBlood: "Tekanan darah",
 			imgGuild: "Pemandu",
 			imgGraph: "Statistik",
@@ -30,6 +33,7 @@ export const localizationStrings = () => {
 			imgSetting: "Pengaturan",
 		},
 		"tl" : {
+			title: 'pangunahing menu',
 			imgCheckBlood: "Presyon ng dugo",
 			imgGuild: "Gabay",
 			imgGraph: "Istatistika",

@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   textInput: {
-    height: 40,
+    height: 50,
     borderColor: 'gray',
     borderWidth: 1,
     alignSelf: 'stretch',

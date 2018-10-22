@@ -2,6 +2,7 @@ import React, {Component, PropTypes} from 'react';
 import { Platform, StyleSheet, Text, Image, Button, View } from 'react-native';
 import api from '../../lib/api';
 import ImageButton from '../../shared/ImageButton';
+import Header from '../../shared/Header';
 import { localizationStrings } from './localization';
 
 export default class HomeScreen extends React.Component {
@@ -20,8 +21,11 @@ export default class HomeScreen extends React.Component {
 	}
 
   render() {
+    const { strings } = this.state;
     return (
       <View style={styles.container}>
+        <Header
+          title={strings.title} />
         <View style={styles.imgContainer}>
           <ImageButton
             source={require('../../images/main-menu/check-blood-pressure.png')}
@@ -81,6 +85,7 @@ const styles = StyleSheet.create({
     padding: 20,
   },
   imgContainer: {
+    flex: 1,
     flexDirection: 'row',
     flexWrap: 'wrap',
   },

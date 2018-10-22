@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import { StyleSheet, Text, Image, View, Alert, TextInput, FlatList, TouchableOpacity } from 'react-native';
 // import { strings } from './localization';
 import ImageButton from '../../shared/ImageButton';
+import Header from '../../shared/Header';
 import { localizationStrings } from './localization';
 
 export default class SettingScreen extends React.Component{
@@ -13,12 +14,12 @@ export default class SettingScreen extends React.Component{
       data: [
         {
           id: 1,
-          text: "Change Language",
-          pressAction: () => this.props.navigation.navigate('Language'),
+          text: "",
+          pressAction: () => this.props.navigation.navigate('SettingLanguage'),
         },
         {
           id: 2,
-          text: "Change Domain IP",
+          text: "",
           pressAction: () => this.props.navigation.navigate('Domain'),
         }
       ],
@@ -26,7 +27,12 @@ export default class SettingScreen extends React.Component{
   }
 
   componentWillMount() {
-    this.setState({ strings: localizationStrings() });
+    const strings = localizationStrings();
+    const { data } = this.state;
+
+    this.setState({ strings });
+    data[0].text = strings.language;
+    data[1].text = strings.domain;
   }
 
   _keyExtractor = (item, index) => item.id.toString();
@@ -58,8 +64,12 @@ export default class SettingScreen extends React.Component{
   // }
 
 	render() {
+    const { strings } = this.state;
 		return(
 			<View style={styles.container}>
+        <Header
+          title={strings.title}
+          back={() => this.props.navigation.goBack()} />
         <FlatList
           data={this.state.data}
           keyExtractor={this._keyExtractor}
